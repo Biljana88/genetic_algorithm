@@ -25,10 +25,12 @@ public class GeneticAlgorithmMain {
 		// KORAK 1. INICIJALIZACIJA
 		List<Chromosome> chromosomes = createInitialChromosomes();
 		
-		System.out.println("Inicijalni hromozomi");
+		System.out.println("Initial chromosomes");
 		for(Chromosome c: chromosomes) {
 			System.out.println(c.toString());
 		}
+		
+		System.out.println("\n\n");
 		
 		int i = 1;
 		
@@ -52,7 +54,7 @@ public class GeneticAlgorithmMain {
 				System.out.println("Chromosomes:");
 				for(Chromosome c: chromosomes) {
 					if((c.getA() + 2 * c.getB() + 3 * c.getC() + 4 * c.getD()) == 30) {
-						System.out.println("The best --> " + c.toString());
+						System.out.println("The best --> " + c.toString() + " --> " + c.getA() + " + 2*" + c.getB() + " + 3*" + c.getC() + " + 4*" + c.getD() + " = 30");
 					} else {
 						System.out.println(c.toString());
 					}					
