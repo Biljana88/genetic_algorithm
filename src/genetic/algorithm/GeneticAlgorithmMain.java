@@ -26,9 +26,7 @@ public class GeneticAlgorithmMain {
 		List<Chromosome> chromosomes = createInitialChromosomes();
 		
 		System.out.println("Initial chromosomes");
-		for(Chromosome c: chromosomes) {
-			System.out.println(c.toString());
-		}
+		printChromosomes(chromosomes);
 		
 		System.out.println("\n\n");
 		
@@ -37,6 +35,8 @@ public class GeneticAlgorithmMain {
 		// Idemo do 1000, dokle bi trebalo da nadjemo optimalni hromozom
 		while(i <= 1000) {
 			chromosomes = getNextGeneration(chromosomes);
+			System.out.println("New generation");
+			printChromosomes(chromosomes);
 			
 			boolean theBestWasFound = false;
 			for(Chromosome c: chromosomes) {
@@ -64,6 +64,12 @@ public class GeneticAlgorithmMain {
 			}
 			
 			i++;
+		}
+	}
+	
+	public static void printChromosomes(List<Chromosome> chromosomes) {
+		for(Chromosome c: chromosomes) {
+			System.out.println(c.toString());
 		}
 	}
 	
